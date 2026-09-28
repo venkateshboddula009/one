@@ -1,2405 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mundrathi Ladies Fashion | Bhupalpally</title>
-
-    <meta
-        name="description"
-        content="Mundrathi Ladies Fashion - Women's fashion store in Bhupalpally, Telangana."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-
-        /* =========================================
-           ROOT
-        ========================================= */
-
-        :root {
-            --primary: #8e3157;
-            --primary-dark: #641d3b;
-            --secondary: #f7e8ee;
-
-            --dark: #171316;
-            --text: #4f484b;
-            --muted: #81787c;
-
-            --white: #ffffff;
-            --cream: #fcf8f6;
-            --border: #eadfe3;
-
-            --shadow:
-                0 20px 60px rgba(44, 20, 31, 0.08);
-
-            --radius-lg: 28px;
-            --radius-md: 18px;
-            --radius-sm: 12px;
-
-            --max-width: 1200px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "DM Sans", sans-serif;
-            color: var(--dark);
-            background: var(--cream);
-            line-height: 1.6;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--max-width)
-            );
-            margin: auto;
-        }
-
-
-        /* =========================================
-           TOP BAR
-        ========================================= */
-
-        .topbar {
-            background: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 9px 15px;
-            font-size: 13px;
-            letter-spacing: .2px;
-        }
-
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(255,255,255,.94);
-            backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(0,0,0,.05);
-        }
-
-        .nav-inner {
-            height: 78px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-mark {
-            width: 42px;
-            height: 42px;
-
-            border-radius: 50%;
-
-            display: grid;
-            place-items: center;
-
-            background: var(--primary);
-            color: white;
-
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .logo-text strong {
-            display: block;
-
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
-            line-height: 1.1;
-        }
-
-        .logo-text span {
-            color: var(--muted);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 34px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 600;
-            color: #443c40;
-            transition: .2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .icon-btn {
-            width: 42px;
-            height: 42px;
-
-            border: 1px solid var(--border);
-            background: white;
-
-            border-radius: 50%;
-
-            display: grid;
-            place-items: center;
-
-            font-size: 17px;
-
-            transition: .2s;
-        }
-
-        .icon-btn:hover {
-            background: var(--secondary);
-            border-color: var(--primary);
-        }
-
-        .menu-btn {
-            display: none;
-        }
-
-
-        /* =========================================
-           HERO
-        ========================================= */
-
-        .hero {
-            min-height: 650px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(40,18,29,.86) 0%,
-                    rgba(40,18,29,.62) 45%,
-                    rgba(40,18,29,.15) 100%
-                ),
-                url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85")
-                center/cover;
-
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 680px;
-            padding: 80px 0;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-            letter-spacing: 2px;
-
-            color: #f7c9d8;
-
-            margin-bottom: 20px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 1px;
-            background: #f7c9d8;
-        }
-
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(48px, 6vw, 78px);
-            line-height: 1.03;
-
-            margin-bottom: 24px;
-        }
-
-        .hero h1 span {
-            color: #f2b6ca;
-        }
-
-        .hero p {
-            max-width: 540px;
-
-            color: rgba(255,255,255,.83);
-
-            font-size: 17px;
-            line-height: 1.8;
-
-            margin-bottom: 34px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 50px;
-
-            padding: 0 25px;
-
-            border-radius: 100px;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            border: 1px solid transparent;
-
-            transition: .25s;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0,0,0,.2);
-        }
-
-        .btn-outline {
-            border-color: rgba(255,255,255,.5);
-            color: white;
-            background: rgba(255,255,255,.05);
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-
-        /* =========================================
-           STATS
-        ========================================= */
-
-        .stats {
-            margin-top: -50px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            background: white;
-
-            border-radius: var(--radius-lg);
-
-            box-shadow: var(--shadow);
-
-            overflow: hidden;
-        }
-
-        .stat {
-            padding: 25px;
-
-            text-align: center;
-
-            border-right: 1px solid var(--border);
-        }
-
-        .stat:last-child {
-            border-right: 0;
-        }
-
-        .stat strong {
-            display: block;
-
-            font-family: "Playfair Display", serif;
-            font-size: 27px;
-
-            color: var(--primary);
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           SECTION
-        ========================================= */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 50px;
-        }
-
-        .section-header .eyebrow {
-            color: var(--primary);
-        }
-
-        .section-header .eyebrow::before {
-            background: var(--primary);
-        }
-
-        .section-title {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(35px, 4vw, 52px);
-
-            line-height: 1.15;
-
-            margin-bottom: 15px;
-        }
-
-        .section-description {
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-
-        /* =========================================
-           CATEGORIES
-        ========================================= */
-
-        .categories {
-            background: white;
-        }
-
-        .category-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .category {
-            position: relative;
-
-            min-height: 300px;
-
-            border-radius: var(--radius-md);
-
-            overflow: hidden;
-
-            cursor: pointer;
-        }
-
-        .category img {
-            height: 100%;
-            object-fit: cover;
-
-            transition: transform .5s;
-        }
-
-        .category:hover img {
-            transform: scale(1.06);
-        }
-
-        .category-overlay {
-            position: absolute;
-            inset: 0;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-
-            padding: 25px;
-
-            background:
-                linear-gradient(
-                    transparent 30%,
-                    rgba(20,10,15,.78)
-                );
-
-            color: white;
-        }
-
-        .category-overlay h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 26px;
-        }
-
-        .category-overlay span {
-            font-size: 12px;
-            opacity: .8;
-        }
-
-
-        /* =========================================
-           PRODUCTS
-        ========================================= */
-
-        .products {
-            background: var(--cream);
-        }
-
-        .product-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 22px;
-        }
-
-        .product-card {
-            background: white;
-
-            border-radius: var(--radius-md);
-
-            overflow: hidden;
-
-            border: 1px solid var(--border);
-
-            transition: .25s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .product-image {
-            position: relative;
-            height: 330px;
-
-            overflow: hidden;
-        }
-
-        .product-image img {
-            height: 100%;
-            object-fit: cover;
-
-            transition: transform .4s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.04);
-        }
-
-        .badge {
-            position: absolute;
-
-            top: 14px;
-            left: 14px;
-
-            padding: 6px 10px;
-
-            background: white;
-
-            border-radius: 30px;
-
-            font-size: 10px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .heart {
-            position: absolute;
-
-            top: 14px;
-            right: 14px;
-
-            width: 36px;
-            height: 36px;
-
-            border-radius: 50%;
-
-            border: none;
-
-            background: white;
-
-            font-size: 17px;
-        }
-
-        .product-info {
-            padding: 18px;
-        }
-
-        .product-info small {
-            color: var(--muted);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-info h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
-
-            margin: 5px 0;
-        }
-
-        .product-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            margin-top: 13px;
-        }
-
-        .price {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .view-btn {
-            border: none;
-            background: var(--secondary);
-
-            color: var(--primary-dark);
-
-            padding: 8px 13px;
-
-            border-radius: 30px;
-
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 80px;
-
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            height: 570px;
-
-            object-fit: cover;
-
-            border-radius: var(--radius-lg);
-        }
-
-        .experience {
-            position: absolute;
-
-            right: -25px;
-            bottom: 30px;
-
-            background: var(--primary);
-
-            color: white;
-
-            padding: 22px;
-
-            border-radius: 18px;
-
-            width: 150px;
-
-            text-align: center;
-
-            box-shadow: var(--shadow);
-        }
-
-        .experience strong {
-            display: block;
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 34px;
-        }
-
-        .about-content .section-title {
-            margin-bottom: 20px;
-        }
-
-        .about-content p {
-            color: var(--muted);
-
-            margin-bottom: 20px;
-
-            line-height: 1.9;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-
-            gap: 15px;
-
-            margin: 30px 0;
-        }
-
-        .feature {
-            display: flex;
-            gap: 10px;
-
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .feature-icon {
-            width: 30px;
-            height: 30px;
-
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-
-            background: var(--secondary);
-
-            color: var(--primary);
-
-            border-radius: 50%;
-        }
-
-
-        /* =========================================
-           REVIEWS
-        ========================================= */
-
-        .reviews {
-            background: #f7edf1;
-        }
-
-        .review-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .review {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: var(--radius-md);
-        }
-
-        .stars {
-            color: #d29325;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .review p {
-            color: var(--text);
-
-            font-family: "Playfair Display", serif;
-
-            font-size: 18px;
-
-            line-height: 1.6;
-
-            margin-bottom: 20px;
-        }
-
-        .review-author {
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-
-        /* =========================================
-           LOCATION
-        ========================================= */
-
-        .location {
-            background: white;
-        }
-
-        .location-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 25px;
-        }
-
-        .map-container {
-            min-height: 450px;
-
-            border-radius: var(--radius-lg);
-
-            overflow: hidden;
-
-            background: #eee;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-
-            min-height: 450px;
-
-            border: 0;
-        }
-
-        .location-card {
-            padding: 45px;
-
-            background: var(--cream);
-
-            border-radius: var(--radius-lg);
-        }
-
-        .location-card h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: 38px;
-
-            margin-bottom: 20px;
-        }
-
-        .location-item {
-            display: flex;
-
-            gap: 15px;
-
-            padding: 18px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-        .location-icon {
-            width: 42px;
-            height: 42px;
-
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-
-            background: white;
-
-            border-radius: 50%;
-
-            color: var(--primary);
-        }
-
-        .location-item strong {
-            display: block;
-            font-size: 13px;
-            margin-bottom: 3px;
-        }
-
-        .location-item span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .location-buttons {
-            display: flex;
-
-            gap: 10px;
-
-            margin-top: 25px;
-
-            flex-wrap: wrap;
-        }
-
-        .dark-btn {
-            background: var(--dark);
-            color: white;
-        }
-
-        .pink-btn {
-            background: #168c55;
-            color: white;
-        }
-
-
-        /* =========================================
-           CTA
-        ========================================= */
-
-        .cta {
-            padding: 70px 0;
-        }
-
-        .cta-box {
-            background:
-                linear-gradient(
-                    120deg,
-                    var(--primary-dark),
-                    var(--primary)
-                );
-
-            color: white;
-
-            border-radius: var(--radius-lg);
-
-            padding: 70px;
-
-            text-align: center;
-        }
-
-        .cta-box h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(35px, 5vw, 55px);
-
-            margin-bottom: 15px;
-        }
-
-        .cta-box p {
-            color: rgba(255,255,255,.8);
-
-            max-width: 600px;
-
-            margin: auto auto 25px;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            background: #171316;
-            color: white;
-
-            padding: 60px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                2fr 1fr 1fr 1.3fr;
-
-            gap: 40px;
-
-            padding-bottom: 45px;
-
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-
-        .footer-brand p {
-            color: #aaa;
-
-            max-width: 330px;
-
-            margin-top: 15px;
-
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        footer h4 {
-            margin-bottom: 18px;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer li {
-            margin-bottom: 10px;
-        }
-
-        footer li a {
-            color: #aaa;
-            font-size: 13px;
-        }
-
-        footer li a:hover {
-            color: white;
-        }
-
-        .copyright {
-            padding-top: 22px;
-
-            color: #777;
-
-            font-size: 12px;
-
-            display: flex;
-            justify-content: space-between;
-        }
-
-
-        /* =========================================
-           MOBILE BOTTOM NAV
-        ========================================= */
-
-        .mobile-nav {
-            display: none;
-        }
-
-
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
-
-        @media(max-width: 1000px) {
-
-            .nav-links {
-                gap: 18px;
-            }
-
-            .category-grid,
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid,
-            .location-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .review-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 700px) {
-
-            .container {
-                width: min(
-                    calc(100% - 28px),
-                    var(--max-width)
-                );
-            }
-
-            .nav-inner {
-                height: 68px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-actions .search-btn,
-            .nav-actions .bag-btn {
-                display: none;
-            }
-
-            .menu-btn {
-                display: grid;
-            }
-
-            .hero {
-                min-height: 650px;
-            }
-
-            .hero-content {
-                padding: 50px 0;
-            }
-
-            .hero h1 {
-                font-size: 49px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .stats {
-                margin-top: -30px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat {
-                border-right: 0;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .stat:last-child {
-                border-bottom: 0;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
-            .category-grid,
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .category {
-                min-height: 230px;
-            }
-
-            .product-image {
-                height: 250px;
-            }
-
-            .product-info h3 {
-                font-size: 17px;
-            }
-
-            .about-image img {
-                height: 430px;
-            }
-
-            .experience {
-                right: 10px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .location-card {
-                padding: 30px 22px;
-            }
-
-            .cta-box {
-                padding: 45px 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .copyright {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .mobile-nav {
-                position: fixed;
-
-                display: flex;
-
-                bottom: 0;
-                left: 0;
-                right: 0;
-
-                height: 68px;
-
-                background: white;
-
-                border-top: 1px solid var(--border);
-
-                z-index: 9999;
-
-                justify-content: space-around;
-
-                padding: 7px 10px;
-            }
-
-            .mobile-nav a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                gap: 2px;
-
-                font-size: 10px;
-
-                color: var(--muted);
-            }
-
-            .mobile-nav a.active {
-                color: var(--primary);
-            }
-
-            .mobile-nav span {
-                font-size: 18px;
-            }
-
-            body {
-                padding-bottom: 65px;
-            }
-
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Poojitha Gottimukkula — M.Pharm Pharmacology professional building expertise in Pharmacovigilance, Clinical Research, and Clinical Data Management." />
+  <meta name="theme-color" content="#fbfaf8" />
+  <title>Poojitha Gottimukkula — Pharmacology to Clinical Research & Drug Safety</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ══════════════ NAVIGATION ══════════════ -->
+  <header class="nav" id="navbar">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#home" aria-label="Home">
+        <span class="nav__brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" role="presentation">
+            <circle cx="16" cy="16" r="3.2" fill="currentColor" />
+            <g stroke="currentColor" stroke-width="1.4" fill="none">
+              <line x1="16" y1="10" x2="16" y2="3" />
+              <line x1="16" y1="22" x2="16" y2="29" />
+              <line x1="10" y1="13" x2="3.5" y2="8" />
+              <line x1="22" y1="13" x2="28.5" y2="8" />
+              <line x1="10" y1="19" x2="3.5" y2="24" />
+              <line x1="22" y1="19" x2="28.5" y2="24" />
+            </g>
+          </svg>
+        </span>
+        <span class="nav__name">Poojitha&nbsp;Gottimukkula</span>
+      </a>
 
-<!-- =========================================
-     TOP BAR
-========================================= -->
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#domains">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<div class="topbar">
-    ✦ Discover your next favourite look at Mundrathi Ladies Fashion
-</div>
-
-
-<!-- =========================================
-     NAVBAR
-========================================= -->
-
-<header class="navbar">
-
-    <div class="container nav-inner">
-
-        <a href="#home" class="logo">
-
-            <div class="logo-mark">
-                M
-            </div>
-
-            <div class="logo-text">
-                <strong>Mundrathi</strong>
-                <span>Ladies Fashion</span>
-            </div>
-
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="#home">Home</a>
-
-            <a href="#collections">Collections</a>
-
-            <a href="#new-arrivals">New Arrivals</a>
-
-            <a href="#about">About</a>
-
-            <a href="#location">Visit Us</a>
-
-        </nav>
-
-
-        <div class="nav-actions">
-
-            <button class="icon-btn search-btn"
-                    onclick="showSearch()">
-                ⌕
-            </button>
-
-            <button class="icon-btn bag-btn"
-                    onclick="showBag()">
-                ♡
-            </button>
-
-            <button class="icon-btn menu-btn"
-                    onclick="toggleMobileMenu()">
-                ☰
-            </button>
-
-        </div>
-
+      <div class="nav__actions">
+        <a class="btn btn--sm btn--ghost" href="resume.html" target="_blank" rel="noopener">View Resume</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
-</header>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#domains">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn--sm btn--primary" href="resume.html" target="_blank" rel="noopener">View Resume</a>
+    </nav>
+  </header>
 
+  <main id="main">
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="hero section" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow fade-up">M.Pharm &nbsp;|&nbsp; Pharmacology</p>
+          <h1 class="display fade-up" style="--d:1">
+            From Pharmacology to<br />
+            <em>Clinical Research</em> &amp; Drug Safety.
+          </h1>
+          <p class="lede fade-up" style="--d:2">
+            I'm <strong>Poojitha Gottimukkula</strong>, an M.Pharm Pharmacology professional with a
+            foundation in pharmacy, hospital practice, and research — currently building my career in
+            Pharmacovigilance, Clinical Research, and Clinical Data Management.
+          </p>
+          <div class="hero__cta fade-up" style="--d:3">
+            <a class="btn btn--primary" href="#domains">Explore My Work</a>
+            <a class="btn btn--outline" href="resume.html" target="_blank" rel="noopener">View Resume</a>
+            <a class="btn btn--text" href="#contact">Let's Connect <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="hero__meta fade-up" style="--d:4">
+            <li>Pharmacology</li>
+            <li>Patient Safety</li>
+            <li>Clinical Research</li>
+            <li>Clinical Data</li>
+          </ul>
+        </div>
 
-<!-- =========================================
-     HERO
-========================================= -->
+        <div class="hero__visual fade-up" style="--d:2" aria-hidden="true">
+          <figure class="hero__graph">
+            <svg viewBox="0 0 560 560" class="sci-graph" role="presentation">
+              <defs>
+                <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#2e6fa3" stop-opacity="0.14" />
+                  <stop offset="100%" stop-color="#2e6fa3" stop-opacity="0" />
+                </radialGradient>
+                <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                  <circle cx="1.5" cy="1.5" r="1.2" fill="#dbe4ec" />
+                </pattern>
+              </defs>
 
-<main>
+              <rect x="0" y="0" width="560" height="560" rx="36" fill="url(#halo)" />
+              <rect x="0" y="0" width="560" height="560" rx="36" fill="url(#grid)" opacity="0.5" />
 
-<section class="hero" id="home">
+              <g class="graph-links" stroke="#c6d6e4" stroke-width="1.2" fill="none">
+                <line x1="280" y1="280" x2="280" y2="120" />
+                <line x1="280" y1="280" x2="430" y2="200" />
+                <line x1="280" y1="280" x2="430" y2="360" />
+                <line x1="280" y1="280" x2="280" y2="440" />
+                <line x1="280" y1="280" x2="130" y2="360" />
+                <line x1="280" y1="280" x2="130" y2="200" />
+                <line class="graph-link--accent" x1="280" y1="120" x2="430" y2="200" />
+                <line class="graph-link--accent" x1="430" y1="360" x2="280" y2="440" />
+                <line class="graph-link--accent" x1="280" y1="440" x2="130" y2="360" />
+              </g>
 
-    <div class="container">
+              <g class="node node--core">
+                <circle cx="280" cy="280" r="46" fill="#ffffff" stroke="#2e6fa3" stroke-width="2.5" />
+                <path d="M280 266 l0 -14 M280 294 l0 14 M266 280 l-14 0 M294 280 l14 0 M270 270 l-10 -10 M290 290 l10 10 M290 270 l10 -10 M270 290 l-10 10 M280 272 l-6 0 l0 15 l6 0 M280 288 l6 0 l0 -15 l-6 0" stroke="#2e6fa3" stroke-width="1.6" fill="none" stroke-linecap="round" />
+                <text x="280" y="346" text-anchor="middle" class="node-char">PHARMACOLOGY</text>
+              </g>
 
-        <div class="hero-content">
+              <g class="node node--orb node--o1">
+                <circle cx="280" cy="120" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="280" y="126" text-anchor="middle" class="node-char2">ICSR</text>
+              </g>
+              <g class="node node--orb node--o2">
+                <circle cx="430" cy="200" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="430" y="206" text-anchor="middle" class="node-char2">ADR</text>
+              </g>
+              <g class="node node--orb node--o3">
+                <circle cx="430" cy="360" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="430" y="366" text-anchor="middle" class="node-char2">eCRF</text>
+              </g>
+              <g class="node node--orb node--o4">
+                <circle cx="280" cy="440" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="280" y="446" text-anchor="middle" class="node-char2">SAE</text>
+              </g>
+              <g class="node node--orb node--o5">
+                <circle cx="130" cy="360" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="130" y="366" text-anchor="middle" class="node-char2">SDTM</text>
+              </g>
+              <g class="node node--orb node--o6">
+                <circle cx="130" cy="200" r="24" fill="#ffffff" stroke="#3ba99a" stroke-width="2" />
+                <text x="130" y="206" text-anchor="middle" class="node-char2">MedDRA</text>
+              </g>
 
-            <div class="eyebrow">
-                Bhupalpally's Ladies Fashion Store
+              <g class="graph-tags">
+                <g class="tag tag--t1">
+                  <circle cx="480" cy="130" r="4" fill="#2e6fa3" />
+                  <text x="492" y="134" class="tag-label">Data integrity</text>
+                </g>
+                <g class="tag tag--t2">
+                  <circle cx="96" cy="296" r="4" fill="#2e6fa3" />
+                  <text x="108" y="300" class="tag-label">Signal detection</text>
+                </g>
+                <g class="tag tag--t3">
+                  <circle cx="470" cy="452" r="4" fill="#3ba99a" />
+                  <text x="482" y="456" class="tag-label">ICH-GCP</text>
+                </g>
+                <g class="tag tag--t4">
+                  <circle cx="150" cy="470" r="4" fill="#3ba99a" />
+                  <text x="162" y="474" class="tag-label">Biostatistics</text>
+                </g>
+              </g>
+
+              <g class="drift">
+                <circle cx="360" cy="88" r="3" fill="#2e6fa3" />
+                <circle cx="452" cy="472" r="2.4" fill="#3ba99a" />
+                <circle cx="84" cy="150" r="2.4" fill="#2e6fa3" />
+              </g>
+            </svg>
+            <figcaption class="sr-only">Abstract scientific knowledge network: pharmacology at the center connected to ICSR, ADR, eCRF, SAE, SDTM and MedDRA nodes.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PERSONAL IDENTITY STRIP ══════════════ -->
+    <section class="identity">
+      <div class="container identity__grid">
+        <div class="identity__name">
+          <p class="shoe">POOJITHA</p>
+          <p class="shoe shoe--name">GOTTIMUKKULA</p>
+          <p class="identity__role">M.Pharm — Pharmacology &nbsp;·&nbsp; Based in India</p>
+        </div>
+        <dl class="identity__interests">
+          <div>
+            <dt>Pharmacovigilance</dt>
+            <dd>Drug safety &amp; patient protection</dd>
+          </div>
+          <div>
+            <dt>Clinical Research</dt>
+            <dd>Trials, sites &amp; monitoring</dd>
+          </div>
+          <div>
+            <dt>Clinical Data Management</dt>
+            <dd>Data quality &amp; integrity</dd>
+          </div>
+        </dl>
+        <div class="identity__avail">
+          <p class="identity__avail-label">Available for</p>
+          <ul class="tag-row">
+            <li>Full-time roles</li>
+            <li>Internships / entry-level</li>
+            <li>Freelance projects</li>
+            <li>Research-oriented work</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ ABOUT ══════════════ -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">01 — About</span>
+          <h2>About Poojitha</h2>
+          <p class="section-sub">Pharmacology at the foundation. Clinical science in the direction.</p>
+        </header>
+
+        <div class="about">
+          <div class="about__media reveal">
+            <div class="portrait">
+              <img src="assets/portrait.png" alt="Poojitha Gottimukkula — professional portrait" width="1024" height="1024" />
             </div>
+            <div class="portrait__card">
+              <p class="portrait__card-title">Poojitha Gottimukkula</p>
+              <p class="portrait__card-sub">M.Pharm — Pharmacology</p>
+            </div>
+          </div>
 
-            <h1>
-                Style that feels
-                <span>beautifully yours.</span>
-            </h1>
-
+          <div class="about__body reveal" style="--d:1">
+            <p class="about__lead">
+              I am a pharmaceutical professional with academic training in <strong>B.Pharmacy</strong> and
+              <strong>M.Pharmacy in Pharmacology</strong>.
+            </p>
             <p>
-                Discover women's fashion that brings together
-                timeless elegance, contemporary style and
-                everyday confidence.
+              My academic journey gave me a strong foundation in pharmacology, therapeutics, research
+              methodology, and pharmaceutical sciences. Experience in hospital pharmacy helped me understand
+              medication use, prescription handling, patient care, documentation, and — most importantly —
+              medication safety.
             </p>
-
-            <div class="hero-buttons">
-
-                <a href="#collections"
-                   class="btn btn-primary">
-                    Explore Collection
-                </a>
-
-                <a href="#location"
-                   class="btn btn-outline">
-                    Visit Our Store
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     STATS
-========================================= -->
-
-<section class="stats">
-
-    <div class="container">
-
-        <div class="stats-grid">
-
-            <div class="stat">
-                <strong>5.0 ★</strong>
-                <span>Customer Rating</span>
-            </div>
-
-            <div class="stat">
-                <strong>Local</strong>
-                <span>Bhupalpally Store</span>
-            </div>
-
-            <div class="stat">
-                <strong>09:30 AM</strong>
-                <span>Store Opens</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     COLLECTIONS
-========================================= -->
-
-<section class="categories"
-         id="collections">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Explore
-            </div>
-
-            <h2 class="section-title">
-                Find your style
-            </h2>
-
-            <p class="section-description">
-                Explore our fashion categories and find
-                something that matches your personality.
-            </p>
-
-        </div>
-
-
-        <div class="category-grid">
-
-
-            <article class="category">
-
-                <img
-                    src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=85"
-                    alt="Ethnic fashion"
-                >
-
-                <div class="category-overlay">
-
-                    <h3>Ethnic Wear</h3>
-
-                    <span>
-                        Traditional • Elegant • Timeless
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="category">
-
-                <img
-                    src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85"
-                    alt="Women's fashion"
-                >
-
-                <div class="category-overlay">
-
-                    <h3>Women's Wear</h3>
-
-                    <span>
-                        Everyday • Modern • Stylish
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="category">
-
-                <img
-                    src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=85"
-                    alt="Fashion collection"
-                >
-
-                <div class="category-overlay">
-
-                    <h3>New Styles</h3>
-
-                    <span>
-                        Fresh • Contemporary • Chic
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <article class="category">
-
-                <img
-                    src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?auto=format&fit=crop&w=800&q=85"
-                    alt="Elegant clothing"
-                >
-
-                <div class="category-overlay">
-
-                    <h3>Occasion Wear</h3>
-
-                    <span>
-                        Special • Elegant • Beautiful
-                    </span>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PRODUCTS
-========================================= -->
-
-<section class="products"
-         id="new-arrivals">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Featured
-            </div>
-
-            <h2 class="section-title">
-                New arrivals
-            </h2>
-
-            <p class="section-description">
-                A curated showcase of styles available
-                at our store.
-            </p>
-
-        </div>
-
-
-        <div class="product-grid">
-
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=700&q=85"
-                        alt="Fashion collection"
-                    >
-
-                    <span class="badge">
-                        New
-                    </span>
-
-                    <button class="heart">
-                        ♡
-                    </button>
-
-                </div>
-
-                <div class="product-info">
-
-                    <small>
-                        Women's Collection
-                    </small>
-
-                    <h3>
-                        Elegant Collection
-                    </h3>
-
-                    <div class="product-bottom">
-
-                        <span class="price">
-                            Visit Store
-                        </span>
-
-                        <button class="view-btn">
-                            View
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=700&q=85"
-                        alt="Women's traditional wear"
-                    >
-
-                    <span class="badge">
-                        Popular
-                    </span>
-
-                    <button class="heart">
-                        ♡
-                    </button>
-
-                </div>
-
-                <div class="product-info">
-
-                    <small>
-                        Ethnic Wear
-                    </small>
-
-                    <h3>
-                        Festive Styles
-                    </h3>
-
-                    <div class="product-bottom">
-
-                        <span class="price">
-                            Visit Store
-                        </span>
-
-                        <button class="view-btn">
-                            View
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=85"
-                        alt="Women's fashion"
-                    >
-
-                    <span class="badge">
-                        New
-                    </span>
-
-                    <button class="heart">
-                        ♡
-                    </button>
-
-                </div>
-
-                <div class="product-info">
-
-                    <small>
-                        Everyday Wear
-                    </small>
-
-                    <h3>
-                        Modern Essentials
-                    </h3>
-
-                    <div class="product-bottom">
-
-                        <span class="price">
-                            Visit Store
-                        </span>
-
-                        <button class="view-btn">
-                            View
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=700&q=85"
-                        alt="Women's dress"
-                    >
-
-                    <span class="badge">
-                        Featured
-                    </span>
-
-                    <button class="heart">
-                        ♡
-                    </button>
-
-                </div>
-
-                <div class="product-info">
-
-                    <small>
-                        Occasion Wear
-                    </small>
-
-                    <h3>
-                        Signature Styles
-                    </h3>
-
-                    <div class="product-bottom">
-
-                        <span class="price">
-                            Visit Store
-                        </span>
-
-                        <button class="view-btn">
-                            View
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     ABOUT
-========================================= -->
-
-<section class="about"
-         id="about">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-
-            <div class="about-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=1000&q=85"
-                    alt="Fashion store"
-                >
-
-                <div class="experience">
-
-                    <strong>5.0</strong>
-
-                    Google Rating
-
-                </div>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <div class="eyebrow">
-                    About us
-                </div>
-
-                <h2 class="section-title">
-                    Fashion made personal.
-                </h2>
-
-                <p>
-                    Mundrathi Ladies Fashion is a women's
-                    fashion destination in Bhupalpally,
-                    Telangana.
-                </p>
-
-                <p>
-                    Our goal is simple — make it easier to
-                    discover beautiful clothing and styles
-                    that feel right for you.
-                </p>
-
-
-                <div class="features">
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            ✓
-                        </div>
-
-                        Curated Fashion
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            ✓
-                        </div>
-
-                        Personal Service
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            ✓
-                        </div>
-
-                        Local Store
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            ✓
-                        </div>
-
-                        Customer Focused
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    href="#location"
-                    class="btn dark-btn"
-                >
-                    Find Our Store
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     REVIEWS
-========================================= -->
-
-<section class="reviews">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="eyebrow">
-                Reviews
-            </div>
-
-            <h2 class="section-title">
-                Loved by customers
-            </h2>
-
-            <p class="section-description">
-                Our Google listing currently shows a
-                5.0 rating.
-            </p>
-
-        </div>
-
-
-        <div class="review-grid">
-
-
-            <article class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    A great local destination for women's
-                    fashion in Bhupalpally.
-                </p>
-
-                <div class="review-author">
-                    Google Customer
-                </div>
-
-            </article>
-
-
-            <article class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    Beautiful styles and a convenient
-                    location on the main road.
-                </p>
-
-                <div class="review-author">
-                    Google Customer
-                </div>
-
-            </article>
-
-
-            <article class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    A highly rated local women's clothing
-                    store.
-                </p>
-
-                <div class="review-author">
-                    Google Customer
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     LOCATION
-========================================= -->
-
-<section class="location"
-         id="location">
-
-    <div class="container">
-
-        <div class="location-grid">
-
-
-            <div class="map-container">
-
-                <iframe
-                    src="https://www.google.com/maps?q=Mundrathi%20Ladies%20Fashion%2C%20Bhupalpally%20Main%20Rd%2C%20Bhupalpally%2C%20Telangana%20506169&output=embed"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-
-            <div class="location-card">
-
-                <div class="eyebrow">
-                    Visit us
-                </div>
-
-                <h2>
-                    Come find your next look.
-                </h2>
-
-
-                <div class="location-item">
-
-                    <div class="location-icon">
-                        📍
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Address
-                        </strong>
-
-                        <span>
-                            Bhupalpally Main Rd,
-                            Bhupalpally,
-                            Telangana 506169
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="location-item">
-
-                    <div class="location-icon">
-                        ☎
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Phone
-                        </strong>
-
-                        <span>
-                            +91 76749 75766
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="location-item">
-
-                    <div class="location-icon">
-                        ★
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Google Rating
-                        </strong>
-
-                        <span>
-                            5.0 / 5.0
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="location-buttons">
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Mundrathi%20Ladies%20Fashion%2C%20Bhupalpally%20Main%20Rd%2C%20Bhupalpally%2C%20Telangana%20506169"
-                        target="_blank"
-                        class="btn dark-btn"
-                    >
-                        Get Directions
-                    </a>
-
-
-                    <a
-                        href="https://wa.me/917674975766"
-                        target="_blank"
-                        class="btn pink-btn"
-                    >
-                        WhatsApp
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CTA
-========================================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <div class="cta-box">
-
-            <h2>
-                Ready to find your style?
-            </h2>
-
             <p>
-                Visit Mundrathi Ladies Fashion in
-                Bhupalpally and explore the latest
-                women's fashion.
+              I am now focused on transitioning into <strong>Pharmacovigilance</strong>,
+              <strong>Clinical Research</strong>, and <strong>Clinical Data Management</strong> — where I can
+              combine pharmaceutical knowledge with clinical, safety, research, and data-management skills.
             </p>
 
-            <a
-                href="tel:+917674975766"
-                class="btn btn-primary"
-            >
-                Call the Store
-            </a>
+            <div class="about__cards">
+              <article class="mini-card">
+                <span class="mini-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 4h14v16H5zM8 9h8M8 13h8M8 17h5"/></svg>
+                </span>
+                <h3>Pharmaceutical Foundation</h3>
+                <p>B.Pharmacy + M.Pharmacy degree training</p>
+              </article>
+              <article class="mini-card">
+                <span class="mini-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 8.7l5.4-.8z"/></svg>
+                </span>
+                <h3>Research Foundation</h3>
+                <p>M.Pharm research project (Glochidion velutinum)</p>
+              </article>
+              <article class="mini-card">
+                <span class="mini-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg>
+                </span>
+                <h3>Clinical Exposure</h3>
+                <p>Hospital pharmacy practice &amp; patient care</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ══════════════ EDUCATION ══════════════ -->
+    <section class="section section--tint" id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">02 — Education</span>
+          <h2>Academic Journey</h2>
+          <p class="section-sub">Two degrees in pharmaceutical sciences, one clear direction.</p>
+        </header>
+
+        <div class="edu">
+          <article class="edu__card reveal">
+            <div class="edu__index">B.Pharm</div>
+            <p class="edu__label">BACHELOR'S DEGREE</p>
+            <h3>B. Pharmacy</h3>
+            <p class="edu__school">Vaagdevi Institute of Pharmaceutical Sciences, Warangal</p>
+            <ul class="edu__tags">
+              <li>Pharmaceutical Chemistry</li>
+              <li>Pharmacology</li>
+              <li>Pharmaceutics</li>
+              <li>Pharmacognosy</li>
+              <li>Hospital Practice</li>
+            </ul>
+          </article>
+
+          <div class="edu__connector reveal" aria-hidden="true"><span class="edu__arrow">↓</span></div>
+
+          <article class="edu__card edu__card--focus reveal" style="--d:1">
+            <div class="edu__index">M.Pharm</div>
+            <p class="edu__label">MASTER'S DEGREE — SPECIALIZATION</p>
+            <h3>M. Pharmacy — Pharmacology</h3>
+            <p class="edu__school">Vaagdevi College of Pharmacy, Hanamkonda</p>
+            <ul class="edu__tags">
+              <li>Advanced Pharmacology</li>
+              <li>Clinical Pharmacology</li>
+              <li>Research Methodology</li>
+              <li>Biostatistics</li>
+              <li>Experimental Pharmacology</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ EXPERIENCE ══════════════ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">03 — Experience</span>
+          <h2>Professional Experience</h2>
+          <p class="section-sub">Where pharmacology meets real patient care.</p>
+        </header>
+
+        <div class="exp reveal">
+          <div class="exp__meta">
+            <span class="exp__role">Hospital Pharmacist</span>
+            <span class="exp__dot" aria-hidden="true"></span>
+            <span class="exp__org">Oval Advanced Fertility Care</span>
+            <span class="exp__dot" aria-hidden="true"></span>
+            <span class="exp__duration">6 Months</span>
+          </div>
+          <ul class="exp__list">
+            <li>Prescription review and medication dispensing</li>
+            <li>Patient counselling with a focus on safe and correct use</li>
+            <li>Medication-related documentation and record keeping</li>
+            <li>Inventory and stock management, including cold-chain handling</li>
+            <li>Coordination with healthcare professionals in a clinical setting</li>
+            <li>Day-to-day pharmacy operations with a medication-safety mindset</li>
+          </ul>
         </div>
 
-    </div>
+        <div class="bridge reveal">
+          <p class="bridge__title">Why this connects to clinical research</p>
+          <ol class="bridge__steps">
+            <li><span>Hospital Pharmacy</span></li>
+            <li><span>Medication Safety</span></li>
+            <li><span>Patient Care</span></li>
+            <li><span>Pharmacology</span></li>
+            <li><span>Clinical Research</span></li>
+            <li><span>Pharmacovigilance</span></li>
+          </ol>
+          <p class="bridge__note">The same discipline of safe, accurate, patient-first practice now extends into drug safety and clinical data.</p>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <!-- ══════════════ RESEARCH ══════════════ -->
+    <section class="section section--tint" id="research">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">04 — Research</span>
+          <h2>Research Experience</h2>
+          <p class="section-sub">A postgraduate research project in experimental pharmacology.</p>
+        </header>
 
-</main>
+        <article class="research reveal">
+          <p class="research__badge">M.PHARM RESEARCH PROJECT</p>
+          <h3 class="research__title">
+            Evaluation of the Protective Effect of <em>Glochidion velutinum</em> Root Extract
+            Against Ethylene Glycol–Induced Urolithiasis
+          </h3>
 
+          <div class="research__grid">
+            <section class="research__block">
+              <h4>Aim</h4>
+              <p>To evaluate the protective effect of <em>Glochidion velutinum</em> root extract against ethylene glycol–induced urolithiasis.</p>
+            </section>
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+            <section class="research__block">
+              <h4>Objectives</h4>
+              <ul>
+                <li>Prepare an ethanolic root extract of the plant material</li>
+                <li>Evaluate the anti-urolithiatic activity</li>
+                <li>Conduct in-vitro studies (nucleation &amp; aggregation assay)</li>
+                <li>Conduct in-vivo studies in a Wistar rat model</li>
+              </ul>
+            </section>
+          </div>
 
-<footer>
+          <section class="research__flow">
+            <h4>Methodology</h4>
+            <ol class="flow flow--research">
+              <li>Plant material</li>
+              <li>Ethanolic extraction</li>
+              <li>Maceration</li>
+              <li>Rotary evaporation</li>
+              <li>In-vitro nucleation assay</li>
+              <li>Aggregation assay</li>
+              <li>In-vivo Wistar rat model</li>
+              <li>Biochemical evaluation</li>
+            </ol>
+          </section>
 
-    <div class="container">
+          <div class="research__grid">
+            <section class="research__block">
+              <h4>Parameters Evaluated</h4>
+              <ul>
+                <li>Urinary biochemical parameters</li>
+                <li>Serum biochemical parameters</li>
+                <li>Nucleation and aggregation</li>
+                <li>Urolithiasis-related parameters</li>
+              </ul>
+            </section>
 
-        <div class="footer-grid">
+            <section class="research__block">
+              <h4>Conclusion</h4>
+              <p class="research__quote">
+                “<em>Glochidion velutinum</em> root extract demonstrated potential anti-urolithiatic activity
+                and protective effects against kidney stone formation.”
+              </p>
+            </section>
+          </div>
 
+          <aside class="research__skills">
+            <h4>Skills exercised in research</h4>
+            <ul class="tag-row">
+              <li>Research design</li>
+              <li>Experimental pharmacology</li>
+              <li>In-vitro studies</li>
+              <li>In-vivo studies</li>
+              <li>Biochemical analysis</li>
+              <li>Scientific documentation</li>
+              <li>Data interpretation</li>
+            </ul>
+          </aside>
+        </article>
+      </div>
+    </section>
 
-            <div class="footer-brand">
+    <!-- ══════════════ THREE DOMAIN FOCUS ══════════════ -->
+    <section class="section" id="domains">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">05 — Expertise</span>
+          <h2>Where I'm Building My Expertise</h2>
+          <p class="section-sub">Three clinical domains. One pharmacology foundation.</p>
+        </header>
 
-                <div class="logo">
+        <div class="domains">
+          <!-- Pharmacovigilance -->
+          <article class="domain-card reveal">
+            <div class="domain-card__head">
+              <span class="domain-card__num">01</span>
+              <div>
+                <h3>Pharmacovigilance</h3>
+                <p>Drug Safety &amp; Patient Protection</p>
+              </div>
+              <span class="domain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 8.7l5.4-.8z"/></svg>
+              </span>
+            </div>
 
-                    <div class="logo-mark">
-                        M
-                    </div>
+            <ol class="flow domain-card__flow" data-collapsed="2">
+              <li>Safety report</li>
+              <li>ICSR</li>
+              <li>Case processing</li>
+              <li>MedDRA coding</li>
+              <li>Medical assessment</li>
+              <li>Quality control</li>
+              <li>Safety reporting</li>
+            </ol>
 
-                    <div class="logo-text">
+            <ul class="chips">
+              <li>AE / ADR</li><li>SAE / SUSAR</li><li>ICSR</li><li>Case intake</li>
+              <li>Case processing</li><li>Duplicate check</li><li>MedDRA coding</li>
+              <li>Seriousness</li><li>Expectedness</li><li>Causality</li><li>Narrative writing</li>
+              <li>Literature review</li><li>Signal detection</li><li>PBRER / PSUR</li>
+              <li>DSUR</li><li>RMP</li>
+            </ul>
 
-                        <strong style="color:white;">
-                            Mundrathi
-                        </strong>
+            <button class="btn btn--outline domain-card__toggle" data-toggle="expand" data-label="Explore PV Knowledge" aria-expanded="false">Explore PV Knowledge <span aria-hidden="true">↓</span></button>
+          </article>
 
-                        <span style="color:#aaa;">
-                            Ladies Fashion
-                        </span>
+          <!-- Clinical Research -->
+          <article class="domain-card reveal" style="--d:1">
+            <div class="domain-card__head">
+              <span class="domain-card__num">02</span>
+              <div>
+                <h3>Clinical Research</h3>
+                <p>Clinical Trials &amp; Patient Safety</p>
+              </div>
+              <span class="domain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg>
+              </span>
+            </div>
 
-                    </div>
+            <ol class="flow domain-card__flow" data-collapsed="2">
+              <li>Protocol</li>
+              <li>Site</li>
+              <li>Patient</li>
+              <li>Trial conduct</li>
+              <li>Monitoring</li>
+              <li>Data</li>
+              <li>Study closeout</li>
+            </ol>
 
-                </div>
+            <ul class="chips">
+              <li>Clinical trial phases</li><li>Clinical trial design</li><li>Protocol</li>
+              <li>ICH-GCP</li><li>Informed consent</li><li>Patient screening</li>
+              <li>Eligibility criteria</li><li>Site management</li><li>Monitoring</li>
+              <li>Protocol deviations</li><li>AE / SAE</li><li>Essential documents</li>
+              <li>Regulatory &amp; ethics</li>
+            </ul>
 
+            <button class="btn btn--outline domain-card__toggle" data-toggle="expand" data-label="Explore Clinical Research" aria-expanded="false">Explore Clinical Research <span aria-hidden="true">↓</span></button>
+          </article>
+
+          <!-- CDM -->
+          <article class="domain-card reveal" style="--d:2">
+            <div class="domain-card__head">
+              <span class="domain-card__num">03</span>
+              <div>
+                <h3>Clinical Data Management</h3>
+                <p>Clinical Data Quality &amp; Integrity</p>
+              </div>
+              <span class="domain-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 8.7l5.4-.8z"/></svg>
+              </span>
+            </div>
+
+            <ol class="flow domain-card__flow" data-collapsed="2">
+              <li>Protocol</li>
+              <li>CRF</li>
+              <li>EDC</li>
+              <li>Data collection</li>
+              <li>Validation</li>
+              <li>Queries</li>
+              <li>Data cleaning</li>
+              <li>Database lock</li>
+            </ol>
+
+            <ul class="chips">
+              <li>CRF / eCRF</li><li>EDC</li><li>Database design</li><li>Data entry</li>
+              <li>Edit checks</li><li>Data validation</li><li>Query management</li>
+              <li>Data cleaning</li><li>Medical coding</li><li>Reconciliation</li>
+              <li>CDISC</li><li>SDTM</li><li>Database lock</li>
+            </ul>
+
+            <button class="btn btn--outline domain-card__toggle" data-toggle="expand" data-label="Explore CDM" aria-expanded="false">Explore CDM <span aria-hidden="true">↓</span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ KNOWLEDGE MAP ══════════════ -->
+    <section class="section section--tint" id="knowledge">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">06 — Knowledge System</span>
+          <h2>My Clinical Knowledge Map</h2>
+          <p class="section-sub">How pharmacology, research, and clinical domains relate. Hover a node to explore.</p>
+        </header>
+
+        <div class="kg reveal" id="knowledgeGraph">
+          <div class="kg__center" tabindex="0" role="button" aria-haspopup="true">
+            <span class="kg__center-mono">PG</span>
+            <span class="kg__center-name">Poojitha</span>
+          </div>
+
+          <div class="kg__legend" aria-hidden="true">
+            <span class="kg__legend-item"><i class="dot dot--core"></i> Foundation</span>
+            <span class="kg__legend-item"><i class="dot dot--domain"></i> Domain</span>
+            <span class="kg__legend-item"><i class="dot dot--skill"></i> Skill area</span>
+          </div>
+
+          <div class="kg__tip" id="kgTip" role="tooltip" aria-live="polite">
+            <p class="kg__tip-title" id="kgTipTitle"></p>
+            <p class="kg__tip-desc" id="kgTipDesc"></p>
+            <ul class="kg__tip-skills" id="kgTipSkills"></ul>
+          </div>
+        </div>
+
+        <noscript>
+          <ul class="chips reveal">
+            <li>Pharmacology</li><li>Clinical Research</li><li>Pharmacovigilance</li>
+            <li>Clinical Data Management</li><li>Patient Safety</li><li>Research Methodology</li>
+            <li>Biostatistics</li><li>Medical Writing</li><li>Regulatory Affairs</li><li>Medical Coding</li>
+          </ul>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ══════════════ SKILLS ══════════════ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">07 — Skills</span>
+          <h2>What I Know</h2>
+          <p class="section-sub">An honest skills matrix — labeled by genuine level of comfort, not inflated percentages.</p>
+        </header>
+
+        <div class="skills">
+          <!-- PV -->
+          <article class="skill-card reveal">
+            <h3 class="skill-card__title">Pharmacovigilance</h3>
+            <ul class="skill-list">
+              <li><span>ICSR processing</span><span class="level level--proj">Project experience</span></li>
+              <li><span>MedDRA</span><span class="level level--proj">Project experience</span></li>
+              <li><span>ADR / AE</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>SAE / SUSAR</span><span class="level level--learning">Learning</span></li>
+              <li><span>Seriousness</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Expectedness</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Causality</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Signal detection</span><span class="level level--learning">Learning</span></li>
+              <li><span>Aggregate reporting</span><span class="level level--foundation">Foundation</span></li>
+            </ul>
+          </article>
+
+          <!-- CR -->
+          <article class="skill-card reveal" style="--d:1">
+            <h3 class="skill-card__title">Clinical Research</h3>
+            <ul class="skill-list">
+              <li><span>ICH-GCP</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Clinical trial lifecycle</span><span class="level level--learning">Learning</span></li>
+              <li><span>Protocol</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Patient screening</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Informed consent</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Monitoring</span><span class="level level--learning">Learning</span></li>
+              <li><span>Protocol compliance</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Safety reporting</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Essential documents</span><span class="level level--foundation">Foundation</span></li>
+            </ul>
+          </article>
+
+          <!-- CDM -->
+          <article class="skill-card reveal" style="--d:2">
+            <h3 class="skill-card__title">Clinical Data Management</h3>
+            <ul class="skill-list">
+              <li><span>CRF / eCRF</span><span class="level level--proj">Project experience</span></li>
+              <li><span>EDC</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Edit checks</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Data validation</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Query management</span><span class="level level--learning">Learning</span></li>
+              <li><span>Data cleaning</span><span class="level level--learning">Learning</span></li>
+              <li><span>Reconciliation</span><span class="level level--foundation">Foundation</span></li>
+              <li><span>CDISC / SDTM</span><span class="level level--learning">Learning</span></li>
+            </ul>
+          </article>
+
+          <!-- Supporting -->
+          <article class="skill-card reveal" style="--d:3">
+            <h3 class="skill-card__title">Supporting Knowledge</h3>
+            <ul class="skill-list">
+              <li><span>Pharmacology</span><span class="level level--proj">Project experience</span></li>
+              <li><span>Research methodology</span><span class="level level--proj">Project experience</span></li>
+              <li><span>Biostatistics</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>Medical writing</span><span class="level level--learning">Learning</span></li>
+              <li><span>Regulatory affairs</span><span class="level level--foundation">Foundation</span></li>
+            </ul>
+
+            <h3 class="skill-card__title skill-card__title--tools">Tools &amp; Platforms</h3>
+            <ul class="skill-list">
+              <li><span>MS Excel / Word / PowerPoint</span><span class="level level--work">Working knowledge</span></li>
+              <li><span>EDC systems</span><span class="level level--learning">Learning</span></li>
+              <li><span>MedDRA</span><span class="level level--proj">Project experience</span></li>
+              <li><span>Argus Safety</span><span class="level level--foundation">Familiarity</span></li>
+            </ul>
+          </article>
+
+          <p class="skills__note" role="note">
+            <strong>Labeling honesty.</strong> “Project experience” marks skills used in simulated cases I completed
+            during my clinical training. No label overstates what I have not yet practiced in industry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PROJECTS ══════════════ -->
+    <section class="section section--tint" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">08 — Projects</span>
+          <h2>Projects &amp; Practical Learning</h2>
+          <p class="section-sub">Turning knowledge into practice — case studies from clinical training. Select any card to open the case study.</p>
+        </header>
+
+        <div class="projects" id="projectsGrid">
+          <!-- Cards are rendered by script.js from caseData -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ FREELANCE ══════════════ -->
+    <section class="section" id="freelance">
+      <div class="container">
+        <div class="freelance reveal">
+          <div class="freelance__head">
+            <span class="kicker">09 — Freelance</span>
+            <h2>Available for Freelance Projects</h2>
+            <p class="section-sub">
+              Interested in supporting pharmaceutical, clinical research, pharmacovigilance, and healthcare
+              projects while continuing to build practical industry experience.
+            </p>
+          </div>
+
+          <div class="freelance__cols">
+            <div class="freelance__left">
+              <p>
+                I can support research-backed, documentation-oriented, and data-organising work that does not
+                require regulated professional credentials:
+              </p>
+              <ul class="freelance__list">
+                <li>Medical &amp; scientific research support</li>
+                <li>Literature review support</li>
+                <li>Pharmacovigilance learning projects</li>
+                <li>Medical writing support</li>
+                <li>Clinical research documentation support</li>
+                <li>Clinical data documentation</li>
+                <li>Pharmaceutical content development</li>
+                <li>Research presentation preparation</li>
+                <li>Scientific data organization</li>
+              </ul>
+            </div>
+
+            <div class="freelance__right">
+              <div class="freelance__card">
+                <p class="freelance__card-kicker">How we could work together</p>
+                <h3>Clear scope. Honest capability. Reliable delivery.</h3>
                 <p>
-                    Women's fashion store in Bhupalpally,
-                    Telangana.
+                  Every project starts with an exact scope so expectations stay honest and outcomes stay
+                  useful. If a task is outside my current capability, I will tell you before we begin.
                 </p>
-
+                <a class="btn btn--primary" href="#contact">Discuss a Project</a>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ══════════════ CAREER TRANSITION ══════════════ -->
+    <section class="section section--tint" id="career">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">10 — Direction</span>
+          <h2>My Career Transition</h2>
+          <p class="section-sub">Building on what I know. Learning what comes next.</p>
+        </header>
 
-            <div>
-
-                <h4>
-                    Explore
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="#home">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#collections">
-                            Collections
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#new-arrivals">
-                            New Arrivals
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Store
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="#about">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#location">
-                            Location
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="tel:+917674975766">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Contact
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="tel:+917674975766">
-                            +91 76749 75766
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#location">
-                            Bhupalpally Main Road
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#location">
-                            Telangana 506169
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
+        <div class="transition">
+          <ol class="transition__steps">
+            <li class="reveal"><span class="ts__label">2019+</span><span>B.Pharmacy</span></li>
+            <li class="reveal" style="--d:1"><span class="ts__label">M.Pharm</span><span>M.Pharm Pharmacology</span></li>
+            <li class="reveal" style="--d:2"><span class="ts__label">Practice</span><span>Hospital Pharmacy</span></li>
+            <li class="reveal" style="--d:3"><span class="ts__label">Research</span><span>Research Experience</span></li>
+            <li class="reveal" style="--d:4"><span class="ts__label">Direction</span><span>Clinical Research</span></li>
+            <li class="reveal" style="--d:5"><span class="ts__label">Patient safety</span><span>Pharmacovigilance</span></li>
+            <li class="reveal" style="--d:6"><span class="ts__label">Data</span><span>Clinical Data Management</span></li>
+          </ol>
         </div>
 
-
-        <div class="copyright">
-
-            <span>
-                © 2026 Mundrathi Ladies Fashion.
-                All rights reserved.
-            </span>
-
-            <span>
-                Bhupalpally, Telangana
-            </span>
-
+        <div class="transition__closing reveal">
+          <h3>Building on what I know. Learning what comes next.</h3>
+          <p>
+            My goal is to apply my pharmaceutical and pharmacology foundation to clinical development,
+            patient safety, drug safety, and clinical data — with the same care I practiced at the pharmacy counter.
+          </p>
         </div>
+      </div>
+    </section>
 
+    <!-- ══════════════ RESUME / PROFILE ══════════════ -->
+    <section class="section" id="resume">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">11 — Resume</span>
+          <h2>Professional Profile</h2>
+          <p class="section-sub">A condensed view of the complete CV.</p>
+        </header>
+
+        <div class="profile reveal">
+          <aside class="profile__aside">
+            <p class="profile__name">Poojitha Gottimukkula</p>
+            <p class="profile__role">M.Pharm — Pharmacology</p>
+            <p class="profile__line">Pharmacovigilance · Clinical Research · Clinical Data Management</p>
+            <a class="btn btn--primary" href="resume.html" target="_blank" rel="noopener">Download Resume</a>
+            <p class="profile__note">
+              The public portfolio intentionally withholds date of birth and salary details; the private CV
+              includes them where required.
+            </p>
+          </aside>
+
+          <div class="profile__main">
+            <section class="profile__row">
+              <h3>Education</h3>
+              <div class="profile__item"><p class="pv__t">M.Pharmacy — Pharmacology</p><p class="pv__s">Vaagdevi College of Pharmacy, Hanamkonda</p></div>
+              <div class="profile__item"><p class="pv__t">B.Pharmacy</p><p class="pv__s">Vaagdevi Institute of Pharmaceutical Sciences, Warangal</p></div>
+            </section>
+            <section class="profile__row">
+              <h3>Experience</h3>
+              <div class="profile__item"><p class="pv__t">Hospital Pharmacist</p><p class="pv__s">Oval Advanced Fertility Care · 6 months</p></div>
+            </section>
+            <section class="profile__row">
+              <h3>Research</h3>
+              <div class="profile__item"><p class="pv__t">M.Pharm Research Project</p><p class="pv__s">Protective effect of Glochidion velutinum root extract against ethylene glycol–induced urolithiasis</p></div>
+            </section>
+            <section class="profile__row">
+              <h3>Domain Skills</h3>
+              <ul class="tag-row">
+                <li>Pharmacovigilance</li><li>Clinical Research</li><li>Clinical Data Management</li>
+                <li>ICH-GCP</li><li>MedDRA</li><li>SDTM (learning)</li><li>Biostatistics</li>
+              </ul>
+            </section>
+            <section class="profile__row">
+              <h3>Projects</h3>
+              <ul class="tag-row">
+                <li>Mock ICSR Case Processing</li><li>MedDRA Coding</li><li>ADR / SAE Assessment</li>
+                <li>Protocol Analysis</li><li>CRF Design</li><li>Edit Checks</li><li>SDTM Mapping</li>
+                <li>Signal Detection</li>
+              </ul>
+            </section>
+            <section class="profile__row">
+              <h3>Certifications</h3>
+              <p class="profile__cert-line">Advanced clinical research &amp; pharmacovigilance training — certificates listed by request in the full CV.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CONTACT ══════════════ -->
+    <section class="section section--tint" id="contact">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <span class="kicker">12 — Contact</span>
+          <h2>Let's Build Something Meaningful.</h2>
+          <p class="section-sub">
+            Open to opportunities in Pharmacovigilance, Clinical Research, Clinical Data Management, and
+            relevant freelance projects.
+          </p>
+        </header>
+
+        <div class="contact reveal">
+          <div class="contact__left">
+            <p class="contact__label">Email</p>
+            <a class="contact__value" href="mailto:poojithagottimukkula@gmail.com">poojithagottimukkula@gmail.com</a>
+            <p class="contact__label">LinkedIn</p>
+            <a class="contact__value" href="https://www.linkedin.com/in/poojitha38" target="_blank" rel="noopener">linkedin.com/in/poojitha38</a>
+
+            <div class="contact__actions">
+              <a class="btn btn--primary" href="mailto:poojithagottimukkula@gmail.com">Email Me</a>
+              <a class="btn btn--outline" href="https://www.linkedin.com/in/poojitha38" target="_blank" rel="noopener">Connect on LinkedIn</a>
+              <a class="btn btn--text" href="resume.html" target="_blank" rel="noopener">View Resume <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">Send Message</button>
+            <p class="contact-form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__name">Poojitha Gottimukkula</p>
+          <p class="footer__role">M.Pharm — Pharmacology</p>
+          <p class="footer__domains">Clinical Research · Pharmacovigilance · Clinical Data Management</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://www.linkedin.com/in/poojitha38" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:poojithagottimukkula@gmail.com">Email</a>
+          <a href="resume.html" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+      <p class="footer__copy">Pharmacology at the foundation. Clinical science in the direction.</p>
+      <p class="footer__legal">© 2026 Poojitha Gottimukkula. All rights reserved.</p>
     </div>
-
-</footer>
-
-
-<!-- =========================================
-     MOBILE NAV
-========================================= -->
-
-<nav class="mobile-nav">
-
-    <a href="#home" class="active">
-
-        <span>⌂</span>
-        Home
-
-    </a>
-
-
-    <a href="#collections">
-
-        <span>◈</span>
-        Collections
-
-    </a>
-
-
-    <a href="#new-arrivals">
-
-        <span>✦</span>
-        New
-
-    </a>
-
-
-    <a href="#location">
-
-        <span>⌖</span>
-        Visit
-
-    </a>
-
-</nav>
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
-<script>
-
-    function showSearch() {
-
-        const search = prompt(
-            "What are you looking for?"
-        );
-
-        if (search) {
-
-            alert(
-                "Search feature can be connected to your product catalogue."
-            );
-
-        }
-
-    }
-
-
-    function showBag() {
-
-        alert(
-            "Your wishlist / shopping bag will appear here."
-        );
-
-    }
-
-
-    function toggleMobileMenu() {
-
-        const links =
-            document.querySelector(".nav-links");
-
-        if (
-            links.style.display === "flex"
-        ) {
-
-            links.style.display = "";
-
-        } else {
-
-            links.style.display = "flex";
-
-            links.style.position = "absolute";
-
-            links.style.top = "68px";
-
-            links.style.left = "0";
-
-            links.style.right = "0";
-
-            links.style.padding = "25px";
-
-            links.style.background = "white";
-
-            links.style.flexDirection = "column";
-
-            links.style.alignItems = "flex-start";
-
-            links.style.boxShadow =
-                "0 20px 30px rgba(0,0,0,.08)";
-
-        }
-
-    }
-
-
-    /* Heart buttons */
-
-    document
-        .querySelectorAll(".heart")
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    this.textContent =
-                        this.textContent === "♡"
-                        ? "♥"
-                        : "♡";
-
-                }
-            );
-
-        });
-
-
-    /* Scroll reveal */
-
-    const observer =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: .12
-            }
-        );
-
-
-    document
-        .querySelectorAll(
-            ".category, .product-card, .review, .about-content"
-        )
-        .forEach(element => {
-
-            element.style.opacity = "0";
-
-            element.style.transform =
-                "translateY(20px)";
-
-            element.style.transition =
-                "opacity .6s ease, transform .6s ease";
-
-            observer.observe(element);
-
-        });
-
-</script>
-
-
+  </footer>
+
+  <!-- ══════════════ CASE STUDY MODAL ══════════════ -->
+  <div class="modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" data-close-modal aria-label="Close case study">×</button>
+      <p class="modal__kicker" id="cmKicker"></p>
+      <h3 id="cmTitle"></h3>
+      <div class="modal__body" id="cmBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
